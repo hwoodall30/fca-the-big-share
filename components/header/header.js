@@ -1,6 +1,7 @@
 import { Base } from '../base/base.js';
 
 class Header extends Base {
+	mobile = false;
 	constructor() {
 		super();
 
@@ -56,12 +57,20 @@ class Header extends Base {
         --webkit-backdrop-filter: blur(4px);
     }
     
-    header h1 {
-        font-size: clamp(0.75rem, 2vw, 1rem);
+    header .header-left {
+        font-size: clamp(0.9rem, 2vw, 1rem);
         font-weight: bold;
     }
 
-    header h1 a {
+    header .header-left .mobile-header-title {
+        display: none;
+    }
+
+    header .header-left .desktop-header-title {
+        display: block;
+    }
+
+    header .header-left a {
         text-decoration: none;
         color: inherit;
     }
@@ -78,11 +87,28 @@ class Header extends Base {
         text-decoration: none;
         font-weight: 600;
     }
+
+    @media screen and (max-width: 768px) {
+        header .header-left .mobile-header-title {
+            display: block;
+        }
+
+        header .header-left .desktop-header-title {
+            display: none;
+        }
+    }
     `;
 
 	html = /*html*/ `
             <header>
-                <h1><a href="../">Smoky Mountain FCA - The Big Share</a></h1>
+                <div class="header-left">
+                    <a class="mobile-header-title" href="../">
+                        FCA
+                    </a>
+                    <a class="desktop-header-title" href="../">
+                        Smokey Mountain FCA - The Big Share
+                    </a>
+                </div>
                 <div class="header-right">
                     <a href="#organizations"> Organizations </a>
                     <donate-button></donate-button> 

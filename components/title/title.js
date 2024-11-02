@@ -31,14 +31,14 @@ class Title extends Base {
         :host {
             width: 100%;
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
        
         }
 
        .main-title {
-            font-size: clamp(6rem, 10vw, 8rem);
+            font-size: clamp(4rem, 10vw, 8rem);
             color: var(--neutral-50);
             font-weight: bold;
             text-align: center;
@@ -48,6 +48,7 @@ class Title extends Base {
             justify-content: center;
             align-items: center;
             width: 100%;
+            line-height:5rem
         }
         `;
 
