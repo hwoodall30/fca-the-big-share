@@ -30,13 +30,13 @@ class Header extends Base {
         width: 100%;
         display: block;
         position: fixed;
+        top: 0;
         height: 4rem;
         z-index: 100;
     }
 
     header {
         height: 100%;
-        top: 0;
         width: 100%;
         display: grid;
         align-items: center;
