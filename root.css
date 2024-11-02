@@ -8,20 +8,12 @@ main .image-wrapper {
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
-}
-
-main .image-wrapper img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	max-width: 100%;
-}
-
-main donate-button {
-	position: absolute;
-	top: 55%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	background-image: url("./assets/Blount County Courthouse.jpg");
+	background-size: cover;
+	display: grid;
+	justify-items: center;
+	align-content: center;
+	gap: 3rem;
 }
 
 main donate-button::part(button) {
@@ -95,7 +87,12 @@ main .organization-logo-container .logo {
 	flex: 1 0 250px;
 	height: 200px;
 	border-radius: 10px;
-	background: linear-gradient(90deg, var(--neutral-300) 0%, var(--neutral-200) 50%, var(--neutral-300) 100%);
+	background: linear-gradient(
+		90deg,
+		var(--neutral-300) 0%,
+		var(--neutral-200) 50%,
+		var(--neutral-300) 100%
+	);
 	background-size: 200% 100%;
 	animation: shimmer 2.5s infinite linear;
 	display: grid;

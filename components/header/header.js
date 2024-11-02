@@ -1,4 +1,4 @@
-import { Base } from '../base/base.js';
+import { Base } from "../base/base.js";
 
 class Header extends Base {
 	mobile = false;
@@ -9,9 +9,9 @@ class Header extends Base {
 	}
 
 	setupHeaderAnimation() {
-		const header = this.shadowRoot.querySelector('header');
-		document.addEventListener('scroll', () => {
-			window.scrollY > 0 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+		const header = this.shadowRoot.querySelector("header");
+		document.addEventListener("scroll", () => {
+			window.scrollY > 0 ? header.classList.add("scrolled") : header.classList.remove("scrolled");
 		});
 	}
 
@@ -47,16 +47,17 @@ class Header extends Base {
         z-index: 100;
         color: white;
         background: rgba(255, 255, 255, 0.2);
+        color: var(--neutral-950);
     }
 
     header.scrolled {
         height: 5rem;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
         background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(10px);        /* Standard */
+        -webkit-backdrop-filter: blur(10px); /* Safari */
     }
-    
+
     header .header-left {
         font-size: clamp(0.9rem, 2vw, 1rem);
         font-weight: bold;
@@ -74,14 +75,14 @@ class Header extends Base {
         text-decoration: none;
         color: inherit;
     }
-    
+
     header .header-right {
         display: flex;
         gap: 1rem;
         align-items: center;
         font-size: 0.8rem;
     }
-    
+
     header .header-right a {
         color: inherit;
         text-decoration: none;
@@ -111,10 +112,10 @@ class Header extends Base {
                 </div>
                 <div class="header-right">
                     <a href="#organizations"> Organizations </a>
-                    <donate-button></donate-button> 
+                    <donate-button></donate-button>
                 </div>
             </header>
             `;
 }
 
-customElements.define('header-component', Header);
+customElements.define("header-component", Header);

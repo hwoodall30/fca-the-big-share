@@ -1,4 +1,4 @@
-import { Base } from '../base/base.js';
+import { Base } from "../base/base.js";
 
 class Title extends Base {
 	constructor() {
@@ -8,12 +8,12 @@ class Title extends Base {
 	}
 
 	setupTitleAnimation() {
-		const title = this.shadowRoot.querySelector('.main-title');
-		document.addEventListener('scroll', () => {
+		const title = this.shadowRoot.querySelector(".main-title");
+		document.addEventListener("scroll", () => {
 			const scrollPosition = window.scrollY;
 
-			title.style.setProperty('scale', `${1 + scrollPosition / 650}`);
-			title.style.setProperty('opacity', `${1 - scrollPosition / 650}`);
+			title.style.setProperty("scale", `${1 + scrollPosition / 650}`);
+			title.style.setProperty("opacity", `${1 - scrollPosition / 650}`);
 		});
 	}
 
@@ -30,11 +30,6 @@ class Title extends Base {
 
         :host {
             width: 100%;
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-       
         }
 
        .main-title {
@@ -43,12 +38,10 @@ class Title extends Base {
             font-weight: bold;
             text-align: center;
             display: flex;
-            flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
             align-items: center;
             width: 100%;
-            line-height:5rem
         }
         `;
 
@@ -57,4 +50,4 @@ class Title extends Base {
         `;
 }
 
-customElements.define('title-component', Title);
+customElements.define("title-component", Title);
