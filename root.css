@@ -1,0 +1,131 @@
+main {
+	background: var(--neutral-900);
+	width: 100%;
+}
+
+main .image-wrapper {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+main .image-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	max-width: 100%;
+}
+
+main donate-button {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+main donate-button::part(button) {
+	background: var(--emerald-600);
+	color: white;
+	padding: 1rem 2rem;
+	font-size: 1.1rem;
+}
+
+main donate-button::part(donate-dropdown) {
+	right: unset;
+	left: 50%;
+	translate: -50% 0;
+	transform-origin: top center;
+}
+
+main .explanation-container {
+	background: var(--emerald-800);
+	padding: 5rem 2rem;
+	width: 100%;
+	font-size: 0.8rem;
+	display: grid;
+	color: white;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+	grid-template-columns: repeat(2, auto);
+	gap: 10rem;
+}
+
+main .explanation {
+	line-height: 1.6rem;
+	max-width: 650px;
+}
+
+main .circle-image {
+	width: 30rem;
+	height: 30rem;
+	border-radius: 9999px;
+	background: var(--emerald-600);
+}
+
+main .organizations-container {
+	width: 100%;
+	display: grid;
+	place-items: center;
+	background: var(--neutral-50);
+	padding: 3rem 1rem;
+	overflow-x: hidden;
+}
+
+main .organizations-container h2 {
+	margin-bottom: 2rem;
+	color: var(--emerald-800);
+	white-space: nowrap;
+	font-size: 1.5rem;
+}
+
+main .organization-logo-container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	list-style: none;
+	max-width: 800px;
+	justify-content: center;
+}
+
+main .organization-logo-container .logo {
+	flex: 1 0 250px;
+	height: 200px;
+	border-radius: 10px;
+	background: linear-gradient(90deg, var(--neutral-300) 0%, var(--neutral-200) 50%, var(--neutral-300) 100%);
+	background-size: 200% 100%;
+	animation: shimmer 2.5s infinite linear;
+	display: grid;
+	place-items: center;
+}
+
+@media screen and (max-width: 1280px) {
+	main .explanation-container {
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: 1fr;
+		gap: 5rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	main .circle-image {
+		width: 15rem;
+		height: 15rem;
+	}
+
+	main .organizations-container h2 {
+		font-size: 1rem;
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -200% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}
