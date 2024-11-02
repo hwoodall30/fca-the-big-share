@@ -54,8 +54,8 @@ class Header extends Base {
         height: 5rem;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
         background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(10px);        /* Standard */
-        -webkit-backdrop-filter: blur(10px); /* Safari */
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
     }
 
     header .header-left {
