@@ -42,6 +42,8 @@ class Title extends Base {
             justify-content: center;
             align-items: center;
             width: 100%;
+            scale: 1;
+            opacity: 1;
         }
         `;
 

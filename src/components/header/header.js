@@ -112,7 +112,7 @@ class Header extends Base {
 	html = /*html*/ `
             <header>
                 <div class="header-left">
-                	  <img class="logo" src="./assets/FCA-Sticker.webp" alt="FCA Sticker">
+                	  <img class="logo" src="./FCA-Sticker.webp" alt="FCA Sticker">
                     <a class="mobile-header-title" href="../">
                         FCA
                     </a>

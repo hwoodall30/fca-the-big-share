@@ -2,7 +2,8 @@ setupExplanationCircleAnimation();
 setupLogoAnimations();
 
 function setupExplanationCircleAnimation() {
-	const circle = document.querySelector(".circle-image");
+	const circle = document.querySelector(".circle-image") as HTMLElement;
+	if (!circle) return;
 
 	const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
 
@@ -10,7 +11,7 @@ function setupExplanationCircleAnimation() {
 		(entries) => {
 			for (const entry of entries) {
 				const scale = 0.8 + entry.intersectionRatio * 0.2;
-				circle.style.setProperty("--progress", scale);
+				circle.style.setProperty("--progress", scale.toString());
 			}
 		},
 		{
@@ -24,6 +25,7 @@ function setupExplanationCircleAnimation() {
 
 function setupLogoAnimations() {
 	const logos = document.querySelectorAll(".organization-logo-container .logo");
+	if (!logos?.length) return;
 
 	const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
 
@@ -31,7 +33,7 @@ function setupLogoAnimations() {
 		(entries) => {
 			for (const entry of entries) {
 				const scale = 0.8 + entry.intersectionRatio * 0.2;
-				entry.target.style.setProperty("--scale", scale);
+				(entry.target as HTMLElement).style.setProperty("--scale", scale.toString());
 			}
 		},
 		{
