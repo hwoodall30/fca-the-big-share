@@ -61,6 +61,15 @@ class Header extends Base {
     header .header-left {
         font-size: clamp(0.9rem, 2vw, 1rem);
         font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    header .logo {
+        width: 35px;
+        height: 35px;
+        border-radius: 9999px;
     }
 
     header .header-left .mobile-header-title {
@@ -103,11 +112,12 @@ class Header extends Base {
 	html = /*html*/ `
             <header>
                 <div class="header-left">
+                	  <img class="logo" src="../assets/FCA-Sticker.webp" alt="FCA Sticker">
                     <a class="mobile-header-title" href="../">
                         FCA
                     </a>
                     <a class="desktop-header-title" href="../">
-                        Smokey Mountain FCA - The Big Share
+                        Smokey Mountain FCA
                     </a>
                 </div>
                 <div class="header-right">
