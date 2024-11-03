@@ -18,6 +18,27 @@
 		<header-component></header-component>
 		<main>
 			<div class="image-wrapper">
+				<picture>
+					<source
+						srcset="
+							./assets/Blount-County-Courthouse.webp  800w,
+							./assets/Blount-County-Courthouse.webp 1200w,
+							./assets/Blount-County-Courthouse.webp 1800w
+						"
+						type="image/webp"
+						sizes="100vw"
+					/>
+					<img
+						src="./assets/Blount-County-Courthouse.jpg"
+						srcset="
+							./assets/Blount-County-Courthouse.jpg  800w,
+							./assets/Blount-County-Courthouse.jpg 1200w,
+							./assets/Blount-County-Courthouse.jpg 1800w
+						"
+						sizes="100vw"
+						alt="Hero"
+					/>
+				</picture>
 				<title-component></title-component>
 				<donate-button></donate-button>
 			</div>

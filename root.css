@@ -6,15 +6,25 @@ main {
 main .image-wrapper {
 	width: 100%;
 	height: 100vh;
+	height: 100dvh;
 	position: relative;
 	overflow: hidden;
-	background-image: url("./assets/Blount County Courthouse.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	display: grid;
 	justify-items: center;
 	align-content: center;
 	gap: 3rem;
+}
+
+main .image-wrapper picture {
+	position: absolute;
+}
+
+main .image-wrapper picture source,
+main .image-wrapper picture img,
+main .image-wrapper picture {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }
 
 main donate-button::part(button) {
