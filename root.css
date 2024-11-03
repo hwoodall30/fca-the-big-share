@@ -56,7 +56,7 @@ main .circle-image {
 	height: 24rem;
 	border-radius: 9999px;
 	background: var(--emerald-600);
-	scale: var(--progress, 1);
+	scale: var(--progress, 0.8);
 	transition: scale 0.1s linear;
 }
 
@@ -100,12 +100,8 @@ main .organization-logo-container .logo {
 	animation: shimmer 2.5s infinite linear;
 	display: grid;
 	place-items: center;
-	scale: var(--scale, 0.5);
+	scale: var(--scale, 0.8);
 	transition: scale 0.1s linear;
-}
-
-main .organization-logo-container .logo:nth-child(even) {
-	transition-delay: 0.01s;
 }
 
 @media screen and (max-width: 1280px) {

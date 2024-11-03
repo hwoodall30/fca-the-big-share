@@ -31,7 +31,6 @@ function setupLogoAnimations() {
 		(entries) => {
 			for (const entry of entries) {
 				const scale = 0.8 + entry.intersectionRatio * 0.2;
-				console.log(scale);
 				entry.target.style.setProperty("--scale", scale);
 			}
 		},
