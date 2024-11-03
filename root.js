@@ -9,11 +9,8 @@ function setupExplanationCircleAnimation() {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			for (const entry of entries) {
-				const progress = entry.intersectionRatio * 1.2;
-
-				if (progress > 0.8) {
-					circle.style.setProperty("--progress", progress);
-				}
+				const scale = 0.8 + entry.intersectionRatio * 0.2;
+				circle.style.setProperty("--progress", scale);
 			}
 		},
 		{
@@ -33,8 +30,8 @@ function setupLogoAnimations() {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			for (const entry of entries) {
-				const scale = entry.intersectionRatio;
-
+				const scale = 0.8 + entry.intersectionRatio * 0.2;
+				console.log(scale);
 				entry.target.style.setProperty("--scale", scale);
 			}
 		},
