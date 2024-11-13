@@ -1,4 +1,4 @@
-var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configurable:!0,writable:!0,value:e}):o[r]=e;var i=(o,r,e)=>c(o,typeof r!="symbol"?r+"":r,e);(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function e(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(t){if(t.ep)return;t.ep=!0;const s=e(t);fetch(t.href,s)}})();h();p();function h(){const o=document.querySelector(".circle-image");if(!o)return;const r=Array.from({length:101},(n,t)=>t/100);new IntersectionObserver(n=>{for(const t of n){const s=.8+t.intersectionRatio*.2;o.style.setProperty("--progress",s.toString())}},{root:null,threshold:r}).observe(o)}function p(){const o=document.querySelectorAll(".organization-logo-container .logo");if(!(o!=null&&o.length))return;const r=Array.from({length:101},(n,t)=>t/100),e=new IntersectionObserver(n=>{for(const t of n){const s=.8+t.intersectionRatio*.2;t.target.style.setProperty("--scale",s.toString())}},{root:null,threshold:r});for(const n of o)e.observe(n)}class l extends HTMLElement{constructor(){super();i(this,"styles",null);i(this,"html",null);this.attachShadow({mode:"open"})}render(){if(this.styles){const e=document.createElement("style");e.textContent=this.styles,this.shadowRoot.appendChild(e)}if(this.html){const e=document.createElement("template");e.innerHTML=this.html,this.shadowRoot.appendChild(e.content.cloneNode(!0))}}}class u extends l{constructor(){super();i(this,"mobile",!1);i(this,"styles",`
+var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configurable:!0,writable:!0,value:e}):o[r]=e;var s=(o,r,e)=>c(o,typeof r!="symbol"?r+"":r,e);(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function e(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(t){if(t.ep)return;t.ep=!0;const i=e(t);fetch(t.href,i)}})();h();p();function h(){const o=document.querySelector(".circle-image");if(!o)return;const r=Array.from({length:101},(n,t)=>t/100);new IntersectionObserver(n=>{for(const t of n){const i=.8+t.intersectionRatio*.2;o.style.setProperty("--progress",i.toString())}},{root:null,threshold:r}).observe(o)}function p(){const o=document.querySelectorAll(".organization-logo-container .logo");if(!(o!=null&&o.length))return;const r=Array.from({length:101},(n,t)=>t/100),e=new IntersectionObserver(n=>{for(const t of n){const i=.8+t.intersectionRatio*.2;t.target.style.setProperty("--scale",i.toString())}},{root:null,threshold:r});for(const n of o)e.observe(n)}class l extends HTMLElement{constructor(){super();s(this,"styles",null);s(this,"html",null);this.attachShadow({mode:"open"})}render(){if(this.styles){const e=document.createElement("style");e.textContent=this.styles,this.shadowRoot.appendChild(e)}if(this.html){const e=document.createElement("template");e.innerHTML=this.html,this.shadowRoot.appendChild(e.content.cloneNode(!0))}}}class u extends l{constructor(){super();s(this,"mobile",!1);s(this,"styles",`
     * {
         box-sizing: border-box;
         margin: 0;
@@ -46,8 +46,8 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
     }
 
     header .logo {
-        width: 35px;
-        height: 35px;
+        width: 90px;
+        height: 65px;
         border-radius: 9999px;
     }
 
@@ -61,7 +61,7 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
 
     header .header-left a {
         text-decoration: none;
-        color: inherit;
+        color: var(--primary-blue);
     }
 
     header .header-right {
@@ -72,7 +72,7 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
     }
 
     header .header-right a {
-        color: inherit;
+        color: var(--primary-blue);
         text-decoration: none;
         font-weight: 600;
     }
@@ -86,23 +86,17 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
             display: none;
         }
     }
-    `);i(this,"html",`
+    `);s(this,"html",`
             <header>
                 <div class="header-left">
-                	  <img class="logo" src="./FCA-Sticker.webp" alt="FCA Sticker">
-                    <a class="mobile-header-title" href="../">
-                        FCA
-                    </a>
-                    <a class="desktop-header-title" href="../">
-                        Smokey Mountain FCA
-                    </a>
+                	  <img class="logo" src="./The Big Share Small.svg" alt="The Big Share" />
                 </div>
                 <div class="header-right">
                     <a href="#organizations"> Organizations </a>
                     <donate-button></donate-button>
                 </div>
             </header>
-            `);super.render()}setupHeaderAnimation(){const e=this.shadowRoot.querySelector("header");document.addEventListener("scroll",()=>{window.scrollY>0?e.classList.add("scrolled"):e.classList.remove("scrolled")})}connectedCallback(){this.setupHeaderAnimation()}}customElements.define("header-component",u);function m({event:o,element:r}){const e=r.getBoundingClientRect();return!(o.clientX>=e.left&&o.clientX<=e.right&&o.clientY>=e.top&&o.clientY<=e.bottom)}class g extends l{constructor(){super();i(this,"styles",`
+            `);super.render()}setupHeaderAnimation(){const e=this.shadowRoot.querySelector("header");document.addEventListener("scroll",()=>{window.scrollY>0?e.classList.add("scrolled"):e.classList.remove("scrolled")})}connectedCallback(){this.setupHeaderAnimation()}}customElements.define("header-component",u);function m({event:o,element:r}){const e=r.getBoundingClientRect();return!(o.clientX>=e.left&&o.clientX<=e.right&&o.clientY>=e.top&&o.clientY<=e.bottom)}class g extends l{constructor(){super();s(this,"styles",`
 
     * {
         box-sizing: border-box;
@@ -119,7 +113,7 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
     .donate-button-container {
         position: relative;
     }
-    
+
     .donate-button {
         display: grid;
         place-items: center;
@@ -135,7 +129,7 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
         font-size: 0.8rem;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
     }
-    
+
     .donate-dropdown {
         color: var(--neutral-700);
         opacity: 0;
@@ -154,26 +148,27 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
         grid-template-rows: 1fr auto;
         place-items: center;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
-    
+
     .donate-dropdown .steps-container {
         display: grid;
         gap: 0.5rem;
     }
-    
+
     .donate-dropdown .steps-list > li {
         width: clamp(14rem, 20vw, 20rem);
     }
-    
+
     .donate-dropdown .steps-title {
         font-weight: bold;
     }
-    
+
     .donate-dropdown .steps-list {
         list-style: none;
         font-size: 0.7rem;
     }
-    
+
     .donate-dropdown a {
         background: white;
         border-radius: 9999px;
@@ -191,7 +186,7 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
         translate: 0 0;
         pointer-events: all;
     }
-    `);i(this,"html",`
+    `);s(this,"html",`
     <div class="donate-button-container">
         <button part="button" class="donate-button">Donate</button>
         <div part="donate-dropdown" class="donate-dropdown">
@@ -201,13 +196,13 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
                     <li>1. Click Donate below</li>
                     <li>2. You will be redirected to the Give Page</li>
                     <li>3. Enter your information</li>
-                    <li>4. Donate to a great cause. Thank you for your support!</li>
+                    <li>4. Thank you for your support!</li>
                 </ul>
             </div>
             <a href="https://blountchurch.churchcenter.com/giving/to/the-big-share" target="_blank">Donate</a>
         </div>
     </div>
-    `);super.render()}setupDonateDropDown(){const e=this.shadowRoot.querySelector(".donate-button"),n=this.shadowRoot.querySelector(".donate-dropdown");e.addEventListener("click",t=>{t.stopPropagation(),n.classList.toggle("show")}),document.addEventListener("click",t=>{m({event:t,element:n})&&n.classList.remove("show")})}connectedCallback(){this.setupDonateDropDown()}}customElements.define("donate-button",g);class b extends l{constructor(){super();i(this,"styles",`
+    `);super.render()}setupDonateDropDown(){const e=this.shadowRoot.querySelector(".donate-button"),n=this.shadowRoot.querySelector(".donate-dropdown");e.addEventListener("click",t=>{t.stopPropagation(),n.classList.toggle("show")}),document.addEventListener("click",t=>{m({event:t,element:n})&&n.classList.remove("show")})}connectedCallback(){this.setupDonateDropDown()}}customElements.define("donate-button",g);class b extends l{constructor(){super();s(this,"styles",`
         * {
             box-sizing: border-box;
             margin: 0;
@@ -216,6 +211,13 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
 
         :host {
             width: 100%;
+        }
+
+        .main-title-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
         }
 
        .main-title {
@@ -227,10 +229,14 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
             gap: 2rem;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            width: 40%;
+            min-width: 300px;
+            max-width: 1000px;
             scale: 1;
             opacity: 1;
         }
-        `);i(this,"html",`
-    <h1 class="main-title">The Big Share</h1>
+        `);s(this,"html",`
+	<div class="main-title-container">
+    <img src="./The Big Share.svg" alt="The Big Share" class="main-title"  />
+  </div>
         `);super.render()}setupTitleAnimation(){const e=this.shadowRoot.querySelector(".main-title");document.addEventListener("scroll",()=>{const n=window.scrollY;e.style.setProperty("scale",`${1+n/650}`),e.style.setProperty("opacity",`${1-n/650}`)})}connectedCallback(){this.setupTitleAnimation()}}customElements.define("title-component",b);
