@@ -1,5 +1,5 @@
-import { isOutsideClick } from '../../utils/isOutsideClick.js';
-import { Base } from '../base/base.js';
+import { isOutsideClick } from "../../utils/isOutsideClick.js";
+import { Base } from "../base/base.js";
 
 class DonateButton extends Base {
 	constructor() {
@@ -9,17 +9,17 @@ class DonateButton extends Base {
 	}
 
 	setupDonateDropDown() {
-		const button = this.shadowRoot.querySelector('.donate-button');
-		const donateDropdown = this.shadowRoot.querySelector('.donate-dropdown');
+		const button = this.shadowRoot.querySelector(".donate-button");
+		const donateDropdown = this.shadowRoot.querySelector(".donate-dropdown");
 
-		button.addEventListener('click', (e) => {
+		button.addEventListener("click", (e) => {
 			e.stopPropagation();
-			donateDropdown.classList.toggle('show');
+			donateDropdown.classList.toggle("show");
 		});
 
-		document.addEventListener('click', (e) => {
+		document.addEventListener("click", (e) => {
 			if (isOutsideClick({ event: e, element: donateDropdown })) {
-				donateDropdown.classList.remove('show');
+				donateDropdown.classList.remove("show");
 			}
 		});
 	}
@@ -45,7 +45,7 @@ class DonateButton extends Base {
     .donate-button-container {
         position: relative;
     }
-    
+
     .donate-button {
         display: grid;
         place-items: center;
@@ -61,7 +61,7 @@ class DonateButton extends Base {
         font-size: 0.8rem;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
     }
-    
+
     .donate-dropdown {
         color: var(--neutral-700);
         opacity: 0;
@@ -80,26 +80,27 @@ class DonateButton extends Base {
         grid-template-rows: 1fr auto;
         place-items: center;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
-    
+
     .donate-dropdown .steps-container {
         display: grid;
         gap: 0.5rem;
     }
-    
+
     .donate-dropdown .steps-list > li {
         width: clamp(14rem, 20vw, 20rem);
     }
-    
+
     .donate-dropdown .steps-title {
         font-weight: bold;
     }
-    
+
     .donate-dropdown .steps-list {
         list-style: none;
         font-size: 0.7rem;
     }
-    
+
     .donate-dropdown a {
         background: white;
         border-radius: 9999px;
@@ -129,7 +130,7 @@ class DonateButton extends Base {
                     <li>1. Click Donate below</li>
                     <li>2. You will be redirected to the Give Page</li>
                     <li>3. Enter your information</li>
-                    <li>4. Donate to a great cause. Thank you for your support!</li>
+                    <li>4. Thank you for your support!</li>
                 </ul>
             </div>
             <a href="https://blountchurch.churchcenter.com/giving/to/the-big-share" target="_blank">Donate</a>
@@ -138,4 +139,4 @@ class DonateButton extends Base {
     `;
 }
 
-customElements.define('donate-button', DonateButton);
+customElements.define("donate-button", DonateButton);
