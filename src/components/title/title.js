@@ -32,6 +32,13 @@ class Title extends Base {
             width: 100%;
         }
 
+        .main-title-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
        .main-title {
             font-size: clamp(4rem, 10vw, 8rem);
             color: var(--neutral-50);
@@ -41,14 +48,18 @@ class Title extends Base {
             gap: 2rem;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            width: 40%;
+            min-width: 300px;
+            max-width: 1000px;
             scale: 1;
             opacity: 1;
         }
         `;
 
 	html = /*html*/ `
-    <h1 class="main-title">The Big Share</h1>
+	<div class="main-title-container">
+    <img src="./The Big Share.svg" alt="The Big Share" class="main-title"  />
+  </div>
         `;
 }
 

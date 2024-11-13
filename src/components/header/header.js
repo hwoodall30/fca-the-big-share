@@ -67,8 +67,8 @@ class Header extends Base {
     }
 
     header .logo {
-        width: 35px;
-        height: 35px;
+        width: 90px;
+        height: 65px;
         border-radius: 9999px;
     }
 
@@ -82,7 +82,7 @@ class Header extends Base {
 
     header .header-left a {
         text-decoration: none;
-        color: inherit;
+        color: var(--primary-blue);
     }
 
     header .header-right {
@@ -93,7 +93,7 @@ class Header extends Base {
     }
 
     header .header-right a {
-        color: inherit;
+        color: var(--primary-blue);
         text-decoration: none;
         font-weight: 600;
     }
@@ -112,13 +112,7 @@ class Header extends Base {
 	html = /*html*/ `
             <header>
                 <div class="header-left">
-                	  <img class="logo" src="./FCA-Sticker.webp" alt="FCA Sticker">
-                    <a class="mobile-header-title" href="../">
-                        FCA
-                    </a>
-                    <a class="desktop-header-title" href="../">
-                        Smokey Mountain FCA
-                    </a>
+                	  <img class="logo" src="./The Big Share Small.svg" alt="The Big Share" />
                 </div>
                 <div class="header-right">
                     <a href="#organizations"> Organizations </a>
