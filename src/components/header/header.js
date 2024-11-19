@@ -15,8 +15,15 @@ class Header extends Base {
 		});
 	}
 
+	setupGoToOrganizations() {
+		this.shadowRoot.querySelector(".organizations-link").addEventListener("click", () => {
+			document.getElementById("organizations").scrollIntoView();
+		});
+	}
+
 	connectedCallback() {
 		this.setupHeaderAnimation();
+		this.setupGoToOrganizations();
 	}
 
 	styles = /*css*/ `
@@ -72,19 +79,6 @@ class Header extends Base {
         border-radius: 9999px;
     }
 
-    header .header-left .mobile-header-title {
-        display: none;
-    }
-
-    header .header-left .desktop-header-title {
-        display: block;
-    }
-
-    header .header-left a {
-        text-decoration: none;
-        color: var(--primary-blue);
-    }
-
     header .header-right {
         display: flex;
         gap: 1rem;
@@ -92,20 +86,10 @@ class Header extends Base {
         font-size: 0.8rem;
     }
 
-    header .header-right a {
+    header .header-right p {
         color: var(--primary-blue);
         text-decoration: none;
         font-weight: 600;
-    }
-
-    @media screen and (max-width: 768px) {
-        header .header-left .mobile-header-title {
-            display: block;
-        }
-
-        header .header-left .desktop-header-title {
-            display: none;
-        }
     }
     `;
 
@@ -115,7 +99,7 @@ class Header extends Base {
                 	  <img class="logo" src="./The Big Share Small.svg" alt="The Big Share" />
                 </div>
                 <div class="header-right">
-                    <a href="#organizations"> Organizations </a>
+                    <p class="organizations-link"> Organizations </p>
                     <donate-button></donate-button>
                 </div>
             </header>
