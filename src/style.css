@@ -304,6 +304,7 @@ body {
 main {
 	background: var(--neutral-900);
 	width: 100%;
+	overflow-x: hidden;
 }
 
 main .image-wrapper {
