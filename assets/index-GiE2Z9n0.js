@@ -1,4 +1,4 @@
-var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configurable:!0,writable:!0,value:e}):o[r]=e;var s=(o,r,e)=>c(o,typeof r!="symbol"?r+"":r,e);(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function e(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(t){if(t.ep)return;t.ep=!0;const i=e(t);fetch(t.href,i)}})();h();p();function h(){const o=document.querySelector(".circle-image");if(!o)return;const r=Array.from({length:101},(n,t)=>t/100);new IntersectionObserver(n=>{for(const t of n){const i=.8+t.intersectionRatio*.2;o.style.setProperty("--progress",i.toString())}},{root:null,threshold:r}).observe(o)}function p(){const o=document.querySelectorAll(".organization-logo-container .logo");if(!(o!=null&&o.length))return;const r=Array.from({length:101},(n,t)=>t/100),e=new IntersectionObserver(n=>{for(const t of n){const i=.8+t.intersectionRatio*.2;t.target.style.setProperty("--scale",i.toString())}},{root:null,threshold:r});for(const n of o)e.observe(n)}class l extends HTMLElement{constructor(){super();s(this,"styles",null);s(this,"html",null);this.attachShadow({mode:"open"})}render(){if(this.styles){const e=document.createElement("style");e.textContent=this.styles,this.shadowRoot.appendChild(e)}if(this.html){const e=document.createElement("template");e.innerHTML=this.html,this.shadowRoot.appendChild(e.content.cloneNode(!0))}}}class u extends l{constructor(){super();s(this,"mobile",!1);s(this,"styles",`
+var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configurable:!0,writable:!0,value:e}):o[r]=e;var s=(o,r,e)=>c(o,typeof r!="symbol"?r+"":r,e);(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function e(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(t){if(t.ep)return;t.ep=!0;const i=e(t);fetch(t.href,i)}})();p();u();function p(){const o=document.querySelector(".circle-image");if(!o)return;const r=Array.from({length:101},(n,t)=>t/100);new IntersectionObserver(n=>{for(const t of n){const i=.8+t.intersectionRatio*.2;o.style.setProperty("--progress",i.toString())}},{root:null,threshold:r}).observe(o)}function u(){const o=document.querySelectorAll(".organization-logo-container .logo");if(!(o!=null&&o.length))return;const r=Array.from({length:101},(n,t)=>t/100),e=new IntersectionObserver(n=>{for(const t of n){const i=.8+t.intersectionRatio*.2;t.target.style.setProperty("--scale",i.toString())}},{root:null,threshold:r});for(const n of o)e.observe(n)}class l extends HTMLElement{constructor(){super();s(this,"styles",null);s(this,"html",null);this.attachShadow({mode:"open"})}render(){if(this.styles){const e=document.createElement("style");e.textContent=this.styles,this.shadowRoot.appendChild(e)}if(this.html){const e=document.createElement("template");e.innerHTML=this.html,this.shadowRoot.appendChild(e.content.cloneNode(!0))}}}class h extends l{constructor(){super();s(this,"mobile",!1);s(this,"styles",`
     * {
         box-sizing: border-box;
         margin: 0;
@@ -51,19 +51,6 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
         border-radius: 9999px;
     }
 
-    header .header-left .mobile-header-title {
-        display: none;
-    }
-
-    header .header-left .desktop-header-title {
-        display: block;
-    }
-
-    header .header-left a {
-        text-decoration: none;
-        color: var(--primary-blue);
-    }
-
     header .header-right {
         display: flex;
         gap: 1rem;
@@ -71,20 +58,10 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
         font-size: 0.8rem;
     }
 
-    header .header-right a {
+    header .header-right p {
         color: var(--primary-blue);
         text-decoration: none;
         font-weight: 600;
-    }
-
-    @media screen and (max-width: 768px) {
-        header .header-left .mobile-header-title {
-            display: block;
-        }
-
-        header .header-left .desktop-header-title {
-            display: none;
-        }
     }
     `);s(this,"html",`
             <header>
@@ -92,11 +69,11 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
                 	  <img class="logo" src="./The Big Share Small.svg" alt="The Big Share" />
                 </div>
                 <div class="header-right">
-                    <a href="#organizations"> Organizations </a>
+                    <p class="organizations-link"> Organizations </p>
                     <donate-button></donate-button>
                 </div>
             </header>
-            `);super.render()}setupHeaderAnimation(){const e=this.shadowRoot.querySelector("header");document.addEventListener("scroll",()=>{window.scrollY>0?e.classList.add("scrolled"):e.classList.remove("scrolled")})}connectedCallback(){this.setupHeaderAnimation()}}customElements.define("header-component",u);function m({event:o,element:r}){const e=r.getBoundingClientRect();return!(o.clientX>=e.left&&o.clientX<=e.right&&o.clientY>=e.top&&o.clientY<=e.bottom)}class g extends l{constructor(){super();s(this,"styles",`
+            `);super.render()}setupHeaderAnimation(){const e=this.shadowRoot.querySelector("header");document.addEventListener("scroll",()=>{window.scrollY>0?e.classList.add("scrolled"):e.classList.remove("scrolled")})}setupGoToOrganizations(){this.shadowRoot.querySelector(".organizations-link").addEventListener("click",()=>{document.getElementById("organizations").scrollIntoView()})}connectedCallback(){this.setupHeaderAnimation(),this.setupGoToOrganizations()}}customElements.define("header-component",h);function m({event:o,element:r}){const e=r.getBoundingClientRect();return!(o.clientX>=e.left&&o.clientX<=e.right&&o.clientY>=e.top&&o.clientY<=e.bottom)}class g extends l{constructor(){super();s(this,"styles",`
 
     * {
         box-sizing: border-box;
