@@ -63,6 +63,10 @@ var d=Object.defineProperty;var c=(o,r,e)=>r in o?d(o,r,{enumerable:!0,configura
         text-decoration: none;
         font-weight: 600;
     }
+
+    header .organizations-link {
+        cursor: pointer;
+    }
     `);s(this,"html",`
             <header>
                 <div class="header-left">
