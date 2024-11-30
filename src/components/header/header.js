@@ -1,4 +1,4 @@
-import { Base } from '../base/base.js';
+import { Base } from "../base/base.js";
 
 class Header extends Base {
 	mobile = false;
@@ -9,15 +9,15 @@ class Header extends Base {
 	}
 
 	setupHeaderAnimation() {
-		const header = this.shadowRoot.querySelector('header');
-		document.addEventListener('scroll', () => {
-			window.scrollY > 0 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+		const header = this.shadowRoot.querySelector("header");
+		document.addEventListener("scroll", () => {
+			window.scrollY > 0 ? header.classList.add("scrolled") : header.classList.remove("scrolled");
 		});
 	}
 
 	setupGoToOrganizations() {
-		this.shadowRoot.querySelector('.organizations-link').addEventListener('click', () => {
-			document.getElementById('organizations').scrollIntoView();
+		this.shadowRoot.querySelector(".organizations-link").addEventListener("click", () => {
+			document.getElementById("organizations").scrollIntoView();
 		});
 	}
 
@@ -104,10 +104,10 @@ class Header extends Base {
                 </div>
                 <div class="header-right">
                     <p class="organizations-link"> Organizations </p>
-                    <donate-button></donate-button>
+                    <slot name="donate-button"></slot>
                 </div>
             </header>
             `;
 }
 
-customElements.define('header-component', Header);
+customElements.define("header-component", Header);
