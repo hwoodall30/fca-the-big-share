@@ -11,18 +11,11 @@
 
 		<script type="module" src="./src/components/header/header.js"></script>
 		<script type="module" src="./src/components/title/title.js"></script>
+		<script type="module" src="./src/components/donate-button/donate-button.js"></script>
 	</head>
 	<body>
 		<header-component>
-			<div slot="donate-button">
-				<a
-					href="https://app.dimegiving.com/allareworthy/donation_intents/new?campaign=the-big-share"
-					target="_blank"
-					data-dime-donate="true"
-					class="donate-button"
-					>Donate</a
-				>
-			</div>
+			<donate-button slot="donate-button"> </donate-button>
 		</header-component>
 		<main>
 			<div class="image-wrapper">
@@ -48,17 +41,7 @@
 					/>
 				</picture>
 				<title-component></title-component>
-				<script
-					src="https://app.dimegiving.com/allareworthy/donations.js?campaign_slug=the-big-share"
-					async
-				></script>
-				<a
-					href="https://app.dimegiving.com/allareworthy/donation_intents/new?campaign=the-big-share"
-					target="_blank"
-					data-dime-donate="true"
-					class="donate-button"
-					>Donate</a
-				>
+				<donate-button slot="donate-button"> </donate-button>
 			</div>
 			<div class="explanation-container">
 				<p class="explanation">

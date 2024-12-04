@@ -349,6 +349,27 @@ main .image-wrapper picture {
 	object-fit: cover;
 }
 
+main donate-button::part(button) {
+	background: var(--primary-brown);
+	color: white;
+	padding: 1rem 3rem;
+	font-size: 1.5rem;
+	letter-spacing: 0.04rem;
+	text-transform: uppercase;
+	color: var(--primary-blue);
+	border: 2px solid var(--primary-brown);
+	transition: border 0.3s ease;
+}
+main donate-button::part(button):hover {
+	border: 2px solid var(--secondary-brown);
+}
+main donate-button::part(donate-dropdown) {
+	right: unset;
+	left: 50%;
+	translate: -50% 0;
+	transform-origin: top center;
+}
+
 main .explanation-container {
 	background: var(--emerald-800);
 	padding: 5rem 2rem;
@@ -362,26 +383,6 @@ main .explanation-container {
 	justify-content: center;
 	grid-template-columns: repeat(2, auto);
 	gap: 10rem;
-}
-
-main .donate-button {
-	background: var(--primary-brown);
-	color: white;
-	padding: 1rem 3rem;
-	font-size: 1.5rem;
-	letter-spacing: 0.04rem;
-	text-transform: uppercase;
-	color: var(--primary-blue);
-	border: 2px solid var(--primary-brown);
-	transition: border 0.3s ease;
-	z-index: 100;
-	border-radius: 9999px;
-	text-decoration: none;
-	font-weight: 600;
-}
-
-main .donate-button:hover {
-	border: 2px solid var(--secondary-brown);
 }
 
 main .explanation {
